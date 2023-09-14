@@ -6,7 +6,8 @@ class_name_to_id_mapping = {
     "A2_비듬_각질_상피성잔고리": 0
     }
 
-root_dir_name = 'annotations'
+root_dir_name = 'json'
+result_dir_name = 'labels'
 
 def extract_info_from_json(json_file_name):
     f = open(json_file_name)
@@ -69,9 +70,9 @@ def convert_to_yolov5(info_dict):
         width /= image_w
         height /= image_h
         
-        print_buffer.append("{} {:.3f} {:.3f} {:.3f} {:.3f}".format(class_id, center_x, center_y, width, height))
+        print_buffer.append("{} {} {} {} {}".format(class_id, center_x, center_y, width, height))
         
-    save_file_name = os.path.join(root_dir_name, info_dict["filename"].replace("jpg", "txt"))
+    save_file_name = os.path.join(result_dir_name, info_dict["filename"].replace("jpg", "txt"))
     print("\n".join(print_buffer), file=open(save_file_name, "w"))
 
 
