@@ -21,7 +21,7 @@ def extract_info_from_json(json_file_name):
 
     img_size = [1920, 1080, 3]
     info_dict['image_size'] = tuple(img_size)
-    info_dict['filename'] = json_file_name[:-5].split('/')[1] + '.jpg'
+    info_dict['filename'] = json_file_name[:-5].split('/')[-1] + '.jpg'
 
      # search box indexes in 'labelingInfo'
     labeling_info = loaded_file['labelingInfo']
