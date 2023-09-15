@@ -3,11 +3,16 @@ import os
 
 
 class_name_to_id_mapping = {
-    "A2_비듬_각질_상피성잔고리": 0
+    "A1_구진_플라크": 0,
+    "A2_비듬_각질_상피성잔고리": 1,
+    "A3_태선화_과다색소침착": 2,
+    "A4_농포_여드름": 3,
+    "A5_미란_궤양": 4,
+    "A6_결절_종괴": 5,
     }
 
-root_dir_name = 'json'
-result_dir_name = 'labels'
+root_dir_name = 'skin_disease/train/cat/A4_농포_여드름'
+result_dir_name = 'skin_disease/train/cat/A4_농포_여드름/labels'
 
 def extract_info_from_json(json_file_name):
     f = open(json_file_name)
